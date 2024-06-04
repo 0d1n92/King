@@ -22,7 +22,6 @@ Dato che siamo riusciti a ripetere l'operazione per 3 volte, diciamo che 882 ha 
 
 Riesci a trovare un numero con una resistenza di almeno 7? Se sì, come hai fatto?
 vedi codice funzione `SearchSevenResult()`, ho fatto un while che si ferma alla prima occorenza del numero che trova
----
 
 # FREQUENZA DI UN NUMERO
 
