@@ -1,47 +1,59 @@
 ﻿
-var res = new Resistenza();
-Console.WriteLine("Inserisci un numero intero per calcololarne la resistenza");
-string input = Console.ReadLine();
-int number;
-Int32.TryParse(input, out number);
-var result = res.GetResistenza(number);
-Console.WriteLine("La resistenza è " + result);
-Console.WriteLine("getResistenza(39): " + res.GetResistenza(39)); 
-Console.WriteLine("getResistenza(77): " + res.GetResistenza(77));
-Console.WriteLine("getResistenza(1679): " + res.GetResistenza(1679)); 
-Console.WriteLine("getResistenza(6788): " + res.GetResistenza(6788)); 
-Console.WriteLine("Resistenza di sette numeri " + res.SearchSevenResult());
+class Program
+{
+  static void Main()
+  {
+    var resistenza = new Resistenza();
 
+    Console.WriteLine("Inserisci un numero intero per calcolarne la resistenza:");
+    string input = Console.ReadLine();
 
+    if (int.TryParse(input, out int number))
+    {
+      int result = resistenza.GetResistenza(number);
+      Console.WriteLine($"La resistenza è {result}");
+    }
+    else
+    {
+      Console.WriteLine("Input non valido. Inserisci un numero intero.");
+    }
+
+    Console.WriteLine($"getResistenza(39): {resistenza.GetResistenza(39)}");
+    Console.WriteLine($"getResistenza(77): {resistenza.GetResistenza(77)}");
+    Console.WriteLine($"getResistenza(1679): {resistenza.GetResistenza(1679)}");
+    Console.WriteLine($"getResistenza(6788): {resistenza.GetResistenza(6788)}");
+    Console.WriteLine($"Resistenza di sette numeri: {resistenza.SearchSevenResult()}");
+  }
+}
 
 internal class Resistenza
 {
-     public int GetResistenza(int numberInput)
-     {
-         if (numberInput < 10)
-             return 0;
-         int product = 1;
-         while (numberInput > 0)
-         {
-             int cifra = numberInput % 10;
-             product *= cifra;
-             numberInput /= 10;
-         }
-         return 1 + GetResistenza(product);
-     } 
+  public int GetResistenza(int numberInput)
+  {
+    if (numberInput < 10)
+      return 0;
 
-    public int SearchSevenResult ()
+    int product = 1;
+    while (numberInput > 0)
     {
-        var result = 0;
-        var i = 0;
-
-        while (result != 7)
-        {
-            result = GetResistenza(i++);
-
-        }
-
-        return i;
+      int cifra = numberInput % 10;
+      product *= cifra;
+      numberInput /= 10;
     }
 
+    return 1 + GetResistenza(product);
+  }
+
+  public int SearchSevenResult()
+  {
+    int result = 0;
+    int i = 0;
+
+    while (result != 7)
+    {
+      result = GetResistenza(i++);
+    }
+
+    return i;
+  }
 }
