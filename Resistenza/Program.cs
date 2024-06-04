@@ -44,6 +44,31 @@ internal class Resistenza
     return 1 + GetResistenza(product);
   }
 
+
+  /*
+  Versione iterattiva
+  public int GetResistenzaIterativa(int numberInput)
+  {
+    if (numberInput < 10)
+      return 0;
+
+    int resistenza = 0;
+    while (numberInput >= 10)
+    {
+      int product = 1;
+      while (numberInput > 0)
+      {
+        int cifra = numberInput % 10;
+        product *= cifra;
+        numberInput /= 10;
+      }
+      numberInput = product;
+      resistenza++;
+    }
+
+    return resistenza;
+  } */
+
   public int SearchSevenResult()
   {
     int result = 0;
