@@ -1,0 +1,27 @@
+# Ignora i file temporanei generati da Visual Studio
+.vscode/
+.vs/
+bin/
+obj/
+
+# Ignora i file di output dell'applicazione
+*.exe
+*.dll
+*.pdb
+
+# Ignora i file di log
+*.log
+
+# Ignora i file di configurazione specifici dell'utente
+*.user
+*.suo
+
+# Ignora i file di cache
+*.cache
+
+# Ignora i file di analisi del codice
+*.sln.docstates
+*.sln
+
+# Ignora i file di pubblicazione
+Publish/
